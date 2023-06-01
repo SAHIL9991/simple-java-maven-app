@@ -24,6 +24,9 @@ pipeline {
         }
         stage('Deliver') {
             steps {
+                sh 'echo "running delivery and updating file permission"'
+                sh 'chmod +x ./jenkins/scripts/deliver.sh'
+                sh 'echo "permission assigned"'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
